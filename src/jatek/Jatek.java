@@ -8,7 +8,7 @@ package jatek;
  *
  * @author tegzes.marton
  */
-public class Jatek extends Karakter{
+public class Jatek{
 
     /**
      * @param args the command line arguments
