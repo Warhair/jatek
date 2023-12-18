@@ -2,7 +2,7 @@
 package jatek;
 
 
-public class Kezdes extends Helyszin{
+public class Kezdes extends Helyszin implements MasikIrany{
 
     @Override
     public String leiras() {
@@ -11,12 +11,22 @@ public class Kezdes extends Helyszin{
 
     @Override
     public Helyszin egyikIrany() {
-       return new Balra();
+       return new Jobra();
     }
 
     @Override
     public String eggyikBfelirata() {
+        return "jobra";
+    }
+
+    @Override
+    public String masikBfelirata() {
         return "balra";
+            }
+
+    @Override
+    public Helyszin masikIrany() {
+        return new Balra();
     }
     
 }

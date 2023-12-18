@@ -5,6 +5,7 @@ package jatek;
 public class MainForm extends javax.swing.JFrame {
 
     private Helyszin helyszin;
+    private MasikIrany masik;
     
     public MainForm() {
         initComponents();
@@ -12,7 +13,12 @@ public class MainForm extends javax.swing.JFrame {
         helyszin = new Start();
         jTextArea1.insert(helyszin.leiras()+ "\n", 0);
         
-        jButton1.setVisible(false);
+         if(helyszin instanceof MasikIrany){
+          jButton1.setVisible(true);
+      }
+      else{
+           jButton1.setVisible(false);
+      }
         jButton2.setText("Tovább");
         
     }
@@ -81,12 +87,34 @@ public class MainForm extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
        helyszin =helyszin.egyikIrany();
-        jTextArea1.insert(helyszin.eggyikBfelirata() + "\n",0);
+       masik = new Kezdes();
+        jTextArea1.insert(helyszin.leiras() + "\n",0);
+        jButton1.setText(masik.masikBfelirata());
       jTextArea1.setCaretPosition(0);
+      
+      if(helyszin instanceof MasikIrany){
+          jButton1.setVisible(true);
+          jButton2.setText(helyszin.eggyikBfelirata());
+      }
+      else{
+           jButton1.setVisible(false);
+      }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        
+         helyszin =masik.masikIrany();
+         masik = new Kezdes();
+        jTextArea1.insert(helyszin.leiras()+ "\n",0);
+        jButton1.setText(helyszin.eggyikBfelirata());
+      jTextArea1.setCaretPosition(0);
+      
+      if(helyszin instanceof MasikIrany){
+          jButton1.setVisible(true);
+         jButton2.setText(masik.masikBfelirata());
+      }
+      else{
+           jButton1.setVisible(false);
+      }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
