@@ -15,5 +15,10 @@ public class Start extends Helyszin{
     public Helyszin egyikIrany() {
         return new Kezdes();
     }
+
+    @Override
+    public String eggyikBfelirata() {
+       return "tovább";
+    }
     
 }

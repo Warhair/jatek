@@ -10,7 +10,7 @@ public class MainForm extends javax.swing.JFrame {
         initComponents();
         
         helyszin = new Start();
-        jTextArea1.setText(helyszin.leiras());
+        jTextArea1.insert(helyszin.leiras()+ "\n", 0);
         
         jButton1.setVisible(false);
         jButton2.setText("Tovább");
@@ -37,6 +37,11 @@ public class MainForm extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTextArea1);
 
         jButton1.setText("Másik irány");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Egyik irány");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -76,8 +81,13 @@ public class MainForm extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
        helyszin =helyszin.egyikIrany();
-        jTextArea1.setText(helyszin.leiras());
+        jTextArea1.insert(helyszin.eggyikBfelirata() + "\n",0);
+      jTextArea1.setCaretPosition(0);
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
